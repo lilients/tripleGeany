@@ -1,0 +1,79 @@
+Need to know
+============
+
+# important
+ - to use the tool you have to authorize the change of the files in the folder json manually
+ - TripleGeany works in Firefox, 
+ - possible types: input, date, time, text, file, person, ...
+ - Upload: existing files with the same name will be overwritten by the new uploaded file
+
+# About
+- functions.js: functions for all javaScript files
+- adminGeany.js: interface to create form
+- formGeany.js: generate form from json
+- seachGeany.js: searches for triples in the TS and displays the results
+- showGeany.js: shows existing data matching the selected formtype
+- index.php and logout.php = startpage
+- functions.php: functions for the php scripts admin.php, write.php and read.php
+- admin.php: read data from the admin and store as json 
+- read.php: read JSON data from sesame
+- write.php: read JSON, read data from form and store to triplestore
+- delete.php: delete a triple 
+- deleteFile.php: delete a file 
+- upload.php: upload a file
+ 
+JSON example (formstructure):
+
+{
+	"title": "Person aufnehmen",
+	"subject": "Name",
+	"subjecttype": ":NaturalPerson",
+	"field": [{
+		"label": "Daten",
+		"name": "daten",
+		"element": [
+			{
+				"type": "sparqlselect" ,
+				"name": "geschlecht" ,
+				"label": "Gechlecht" ,
+				"predicate": ":hasGender" ,
+				"query": "SELECT ?s WHERE {?p rdf:type :NaturalPerson}"
+			}
+		]
+	}]
+}	
+
+# Snippets
+$(".ui-tooltip").remove();
+
+$('select[id^="source"] option[value="' + source + '"]').attr("selected", "selected");
+
+# Unused code
+functions.js
+
+// table with Buttons to select - not used at the moment
+/* function selectTable(location, name, label, xlabels, ylabels) {
+	left(location, name, label);
+	var x = xlabels.length;
+	var y = ylabels.length;
+	var table = location.append("table");
+	//Kopfzeile mit x Beschriftungen
+	var tr = table.append("tr");
+	tr.append("td");
+	for (var h = 0; h < x; h++) {
+		tr.append("td").html(xlabels[h]);
+	}
+	//Body mit ylabels am Anfang
+	for (var i = 0; i < y; i++) {
+		tr = table.append("tr");
+		tr.append("td").html(ylabels[i]);
+		for (var j = 0; j < x; j++) {
+			var td = tr.append("td");
+			checkbox(td, "checkbox" + i + j, false);
+		}
+	}
+	clear(location);
+}
+*/
+
+

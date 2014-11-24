@@ -1,0 +1,29 @@
+{
+	"name": "name",
+	"url": "http://url",
+	"add": "http://url/add",
+	"username": "",
+	"password": "",
+	"base": "base",
+	"prefix": [
+		{
+			"short": "rdf:",
+			"long": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		}, {
+			"short": "rdfs:",
+			"long": "http://www.w3.org/2000/01/rdf-schema#"
+		}, {
+			"short": "xsd:",
+			"long": "http://www.w3.org/2001/XMLSchema#"
+		}, {
+			"short": "owl:",
+			"long": "http://www.w3.org/2002/07/owl#"
+		}, {
+			"short": "dam:",
+			"long": "http://www.interdisciplinary-laboratory.hu-berlin.de/dam/bwg-dam-ns#"
+		}, {
+			"short": ":",
+			"long": "base"
+		}
+	]
+}

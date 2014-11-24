@@ -1,0 +1,117 @@
+Known Bugs and wanted Features
+==============================
+
+Stuff
+====
+- make delete prettier 
+
+Bugs
+====
+- Chapter: 
+	- werte doppelt eingetragen: Volume; Issue - warum? 
+	- Liste ist nicht vollständig - wo sind die fehlenden Instanzen
+	- DIATOMACEÆ wird nicht aufgelöst
+	- subjekt besteht nur aus name und nicht aus datum, obwohl es so definiert wurde
+	- gespeicherter wert wird in selectliste nicht ausgewählt (series)
+- autocomplete doesnt work in user view - queries in admin view werden zum teil überschrieben mit dem defaultwert
+- admin view: default werte werden nicht mehr angezeigt
+- log in as user when both forms are filled
+- multiple values: delete double entries
+- :arenicolaMarina und :BlubbBla:handbookOfZoology lassen sich nicht löschen
+- checkboxen zeigen wert nicht an
+
+Features
+========
+Done:
+- reasoner error Rücksprache mit hist. Str.: aktuellste Version 
+- allow user to delete form entries 
+- allow user to delete subject+matching objects
+- inputtype image: link + preview
+
+TODO:
+- doku für Hist. Strukturen
+- manual for admin: how to create a form with triplestructure (Mouseover + Dokument) an hist. Strukturen leuten testen (mehrere Wiederholungen, Beobachtung ohne Hilfestellungen) mich überflüssig machen!
+- code doku, alternativen und test cases kennzeichnen (searchGeany todo, functions.js: rewrite fileupload, test read prefixes)
+- allow admin to delete triples in admin view 
+- Browser testen (Safari + Chrome!)
+
+grafical interface
+==================
+
+tutorial
+--------
+ - http://www.codeproject.com/Tips/799641/Overlay-a-tutorial-on-an-existing-web-page-with-jQ
+ - overlay a tutorial to use the setup and function of the tool to new users
+ - include or replace the existing PDF user guide
+
+combobox
+--------
+ - https://davidstutz.github.io/bootstrap-multiselect/#examples
+ - allow users to enter multiple values in a list with checkboxes
+
+loading display
+---------------
+ - https://fgnass.github.io/spin.js/
+ - show animation while site loads
+ - construction of site, search, ...
+ 
+
+functions
+=========
+
+integrate triple editor (WSP)
+----------------------------
+- in admin view, replace search table
+- developer Oliver Pohl oliverpohl@ibi.hu-berlin.de
+- http://141.20.126.167/rdfedit/index/
+
+
+user management
+---------------
+ - include tool in existing environment to use the existing user management (ldap?)
+ 
+
+multilingualism
+---------------
+
+admin interface
+===============
+
+update titles (low priority)
+-------------
+ - provide update button to add changed or new title to the interface
+
+duplicate elements / field
+--------------------------
+- allow admin to duplicate fields and elemts 
+- button
+
+let user select ontology
+------------------------
+- search interface
+- list with used ontologies
+
+user interface
+==============
+
+upload
+-------
+ - stop upload and remove uploaded files
+
+check for dublicates
+--------------------
+ - check if subject exists before adding to triplestore (?)
+
+nested forms
+------------
+ - display more than one form at a page
+ - handle multiple subjects: connect subjects among each other
+
+elementtype table
+-----------------
+ - insert data in table form
+ - handle table to create correct triples
+
+data visualisation
+------------------
+ - visualisation JSON Visualizer / D3
