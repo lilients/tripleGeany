@@ -1,5 +1,5 @@
 # TripleGeany
-TripleGeany is a tool to create forms to generete triples. Users can fill the forms without knowledge of the underlying ontology.
+TripleGeany is a tool to create forms to generate triples. Users can fill the forms without knowledge of the underlying ontology.
 The tool is developed at the interdisciplinary laboratory "Image Knowledge Gestaltung" at the Humboldt-Universität zu Berlin. https://www.interdisciplinary-laboratory.hu-berlin.de/
 
 ![tripleG.png](https://bitbucket.org/repo/BenRdX/images/2508877502-tripleG.png)
