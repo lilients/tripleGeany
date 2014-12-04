@@ -4,7 +4,7 @@
 * calls showGeany.js to show data from the triplestore (showExistingData();)
 *
 * @author Svantje Lilienthal
-* @version 2014-06
+* @version 2014-12
 * @uses functions.js
 */
 
@@ -238,17 +238,11 @@ function writeElement(location, i, j, jsonObject) {
 			autocomplete(elementLocation, id, name, label, query, source, defaultvalue);
 			d3.select("#" + id).attr("title", explanation);
 			break;
-		/*    case "table":
-		var xlabels = jsonObject.field[i].element[j].xlabels.split(",");
-		var ylabels = jsonObject.field[i].element[j].ylabels.split(",");
-		selectTable(elementLocation, name, label, xlabels, ylabels);
-		break; */
-		// TODO: add inputtype image
 		case "image":
 			image(elementLocation, id, name, label, defaultvalue, explanation);
 			break;
 		default:
-			alert("The type \"" + type + "\" is not valid. Please change the JSON-File. Valid Types are: input, date, time, textarea, file, selectlist, sparqlselect, table.");
+			alert("The type \"" + type + "\" is not valid. Please change the JSON-File. Valid Types are: input, date, time, textarea, file, selectlist, sparqlselect, image.");
 	}
 	if (required) {
 		d3.select("#" + id).attr("required", "");

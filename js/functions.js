@@ -1,7 +1,7 @@
 /* functions for the javascript files adminGeany.js, formGeany.js, searchGeany.js and showGeany.js
 * **********************************
 * @author S
-* @version 2014-06
+* @version 2014-12
 * @uses jQuery, jQuery UI, D3
 * @todo drag elements (accordion sortable)
 * @todo allow admin to change calender settings (range, language, etc.)
@@ -37,14 +37,16 @@ function input(location, id, name, label, value, explanation) {
 	clear(location);
 }
 
-// TODO:
-// image
+// image: create image inputfield with preview
 function image(location, id, name, label, value, explanation){
 	left(location, name, label);
 	var right = location.append("div").attr("class", "r");
 	right.append("input").attr("name", name).attr("id", id).attr("value", value).attr("title", explanation);
 	right.append("input").attr("id","button"+id).attr("type", "button").attr("value", "Vorschau").attr("onclick","displayImage('"+id+"')");
 	clear(location);
+	if(value !== ""){
+		displayImage(id);
+	}
 }
 
 function displayImage(id){
@@ -72,7 +74,6 @@ function textarea(location, id, name, label, defaultvalue, explanation) {
 }
 
 // add an input with datepicker to the location
-// TODO: let admin set minDate and maxDate
 function date(location, id, name, label, defaultvalue, explanation) {
 	left(location, name, label);
 	//var currentDate = getCurrentDate();
@@ -216,36 +217,6 @@ function sparqlselect(location, id, name, label, query, source, selected) {
 	});
 }
 
-/*
-* handle triples
-*/
-
-// TODO: test
-/*
-function readPrefixes(source) {
-	var prefixShort = new Array();
-	var prefixLong = new Array();
-
-	if (source == "") {
-		// read source
-		var loc = document.getElementById("source");
-		source = loc.options[loc.selectedIndex].text;
-	}
-
-	// open json file
-	$.getJSON("../ontologies/" + source + ".json", function(json) {
-		for (var i = 0; i < json.prefix.length; i++) {
-			prefixShort.push(json.prefix[i]['short']);
-			prefixLong.push(json.prefix[i]['long']);
-		}
-
-		return array(prefixShort, prefixLong);
-
-	});
-
-}
-*/
-
 function replaceArray(string, pattern, replace) {
 
 	for (var i = 0; i < pattern.length; i++) {
@@ -300,7 +271,6 @@ function autocomplete(location, id, name, label, query, source, defaultvalue) {
 }
 
 // fileupload
-// TODO: rewrite
 function file(location, name, id, label, action) {
 	location.append("div").attr("class", "l").attr("id", "up01").append("label").attr("for", id).html(label);
 	// id für Anhängen des verlinkten Dateinamens
@@ -478,26 +448,3 @@ function hideNote(name) {
 function insertAfter(referenceNode, newNode) {
 	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
-
-/* *************************
-* grafic functions with D3 *
-* **************************/
-// currently not used
-
-// draw a bubble
-function bubbles(location, x1, y1, x2, y2, r) {
-	var svg = location.append("svg").attr("width", 100).attr("height", 50);
-	svg.append("line").style("stroke", "gray").attr("x1", x1).attr("y1", y1).attr("x2", x2).attr("y2", y2);
-	circle(svg, x1, y1, r, "blue");
-	circle(svg, x2, y2, r, "green");
-}
-
-// draw a circle with coordinates x y and radius r
-function circle(location, x, y, r, color) {
-	location.append("circle").style("stroke", "gray").style("fill", "white").attr("r", r).attr("cx", x).attr("cy", y).on("mouseover", function() {
-		d3.select(this).style("fill", color);
-	}).on("mouseout", function() {
-		d3.select(this).style("fill", "white");
-	});
-}
-
