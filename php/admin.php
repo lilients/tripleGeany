@@ -2,7 +2,7 @@
 /* read formstructure and store to file
  * ************************************
  * @author Svantje Lilienthal
- * @version 2014-06
+ * @version 2014-12
  * @uses functions.php
  */
 
@@ -26,7 +26,6 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Administrierung von TripleGeany</title>
 		<meta name="author" content="S" />
-		<!-- Date: 2014-02-10 -->
 		<link rel="stylesheet" type="text/css" href="../style/div.css" />
 		<link rel="icon" type="image/png" href="../img/tripleG.png">
 		<script type="text/javascript" src="../D3/d3.v3.min.js"></script>
@@ -52,9 +51,11 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
 		$filename = $_POST["nameOfFile"];
 		$formTitle = $_POST["titleOfForm"];
 		$stringToSubject = $_POST["stringToSubject"];
-
+		$subject = "";
+		
+		// store each selected subject seperated by ";"
 		foreach ($_POST['subject'] as $selectedOption){
-			$subject .= strtolower(str_replace(" ","",$selectedOption)) . ";";
+			$subject .= $selectedOption . ";";
 		}
 		
 		$subjecttype = $_POST["subjecttype"];
@@ -91,19 +92,25 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
 			//loop for each element j
 			while (isset($_POST["elementTitle" . $i . $j])) {
 				// read element data via POST
-				$elementType = $_POST["type" . $i . $j];
-				$elementTitle = $_POST["elementTitle" . $i . $j];
-				$elementName = str_replace(" ", "", strtolower($_POST["elementTitle" . $i . $j]));
+				$elementType = $_POST["type" . $i . $j]; // mandatory
+				$elementTitle = $_POST["elementTitle" . $i . $j]; // mandatory
+				$elementName = str_replace(" ", "", strtolower($_POST["elementTitle" . $i . $j])); // generated from elementTitle
 				$predicate = $_POST["predicate" . $i . $j];
 
 				$elementRequired = isset($_POST["required" . $i . $j]);
-				$elementClone = isset($_POST["clone" . $i . $j]);
 
-				$elementDefault = $_POST["defaultvalue" . $i . $j];
-				$elementExplanation = $_POST["explanation" . $i . $j];
-
-				//	echo "Elementtitel" . $i . $j . ": " . $elementTitle . "; ";
-				//	echo "Prädikat: " . $predicate . "<br>";
+				if(isset($_POST["defaultvalue" . $i . $j]) && $_POST["defaultvalue" . $i . $j] !== "" ){
+					$elementDefault = $_POST["defaultvalue" . $i . $j];
+				}else{
+					$elementDefault = "";
+				}
+				
+				if(isset($_POST["explanation" . $i . $j])&& $_POST["explanation" . $i . $j] !== "" ){
+					$elementExplanation = $_POST["explanation" . $i . $j];
+				}else{
+					$elementExplanation = "";
+				}
+				
 
 				// store type, name, label and predicate in json variable
 				$json .= "{" . writeLine("type", $elementType) . ", " . writeLine("name", $elementName) . ", " . writeLine("label", $elementTitle) . ", " . writeLine("predicate", $predicate);

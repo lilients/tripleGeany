@@ -25,11 +25,13 @@ if (isset($json['stringToSubject'])) {
 }
 
 $thisSubject = ":" . $stringToSubject;
-$subject = strtolower($json['subject']);
+$subject = strtolower(str_replace(" ","",$json['subject']));
 $subjectArray = explode(";", $subject);
 
 foreach ($subjectArray as $subject) {
-	$thisSubject .= removeUmlauts($_POST[$subject]);
+	if(isset($_POST[$subject])){
+		$thisSubject .= removeUmlauts($_POST[$subject]);
+	}
 }
 
 $subjecttype = $json['subjecttype'];
@@ -86,6 +88,7 @@ for ($i = 0; $i < count($json["field"]); $i++) {
 		// read object from form
 		if (isset($_POST[$name])) {
 			$object = $_POST[$name];
+			$triples = "";
 			
 				if(is_array($object)){
 			
@@ -129,11 +132,12 @@ for ($i = 0; $i < count($json["field"]); $i++) {
 }
 
 // write new values
-writeToTS($triples, $source);
+//writeToTS($triples, $source);
 
 // go back
 $hostname = $_SERVER['HTTP_HOST'];
 $path = dirname($_SERVER['PHP_SELF']);
-header('Location: http://' . $hostname . ($path == '/' ? '' : $path) . '/../form/');
+// header('Location: http://' . $hostname . ($path == '/' ? '' : $path) . '/../form/');
+echo $triples;
  
 ?>

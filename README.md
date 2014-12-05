@@ -4,7 +4,7 @@ The tool is developed at the interdisciplinary laboratory "Image Knowledge Gesta
 
 ![tripleG.png](https://bitbucket.org/repo/BenRdX/images/2508877502-tripleG.png)
 
-# Done
+# Features
  - admin creates a form with subject and predicates for each element
  - admin can seach in triplestore via SPARQL
  - admin can choose between ontologies
@@ -15,6 +15,14 @@ The tool is developed at the interdisciplinary laboratory "Image Knowledge Gesta
   
 # TODO
 https://trello.com/b/tLU63Qb8/triplegeany  
+
+# First steps
+To use TripleGeany on your own, follow the steps:
+1. install xampp
+2. clone the repo from bitbucket to the htdocs folder of your xampp installation 
+3. install a triplestore (eg. sesame with tomcat)
+4. create a new repository in the triplestore and add your existing ontology (if you have none, you can use http://protege.stanford.edu/ to create one)
+5. add the triplestore to TripleGeany by copying the example.json in the folder ontologies and change the data inside accordingly
   
 # About
 - functions.js: functions for all java scripts
