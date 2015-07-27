@@ -19,10 +19,10 @@ https://trello.com/b/tLU63Qb8/triplegeany
 # First steps
 To install TripleGeany, follow the following steps:
 1. install [xampp](https://www.apachefriends.org/de/index.html)
-1. clone the repo from bitbucket to the htdocs folder of your xampp installation 
-1. install a triplestore (eg. [sesame](http://rdf4j.org/) with tomcat)
-1. create a new repository in the triplestore and add your existing ontology (if you have none, you can use [protégé](http://protege.stanford.edu/) to create one)
-1. add the triplestore to TripleGeany by copying the example.json in the folder ontologies and change the data inside accordingly
+2. clone the repo from bitbucket to the htdocs folder of your xampp installation 
+3. install a triplestore (eg. [sesame](http://rdf4j.org/) with tomcat)
+4. create a new repository in the triplestore and add your existing ontology (if you have none, you can use [protégé](http://protege.stanford.edu/) to create one)
+5. add the triplestore to TripleGeany by copying the example.json in the folder ontologies and change the data inside accordingly
   
 # About
 - functions.js: functions for all java scripts
