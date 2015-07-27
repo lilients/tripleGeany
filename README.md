@@ -1,6 +1,6 @@
 # TripleGeany
 TripleGeany is a tool to create forms to generate triples. Users can fill the forms without knowledge of the underlying ontology.
-The tool is developed at the interdisciplinary laboratory "Image Knowledge Gestaltung" at the Humboldt-Universität zu Berlin. https://www.interdisciplinary-laboratory.hu-berlin.de/
+The tool is developed at the [interdisciplinary laboratory "Image Knowledge Gestaltung"](https://www.interdisciplinary-laboratory.hu-berlin.de/) at the Humboldt-Universität zu Berlin. 
 
 ![tripleG.png](https://bitbucket.org/repo/BenRdX/images/2508877502-tripleG.png)
 
@@ -17,12 +17,12 @@ The tool is developed at the interdisciplinary laboratory "Image Knowledge Gesta
 https://trello.com/b/tLU63Qb8/triplegeany  
 
 # First steps
-To use TripleGeany on your own, follow the steps:
-1. install xampp
-2. clone the repo from bitbucket to the htdocs folder of your xampp installation 
-3. install a triplestore (eg. sesame with tomcat)
-4. create a new repository in the triplestore and add your existing ontology (if you have none, you can use http://protege.stanford.edu/ to create one)
-5. add the triplestore to TripleGeany by copying the example.json in the folder ontologies and change the data inside accordingly
+To install TripleGeany, follow the following steps:
+1. install [xampp](https://www.apachefriends.org/de/index.html)
+1. clone the repo from bitbucket to the htdocs folder of your xampp installation 
+1. install a triplestore (eg. [sesame](http://rdf4j.org/) with tomcat)
+1. create a new repository in the triplestore and add your existing ontology (if you have none, you can use [protégé](http://protege.stanford.edu/) to create one)
+1. add the triplestore to TripleGeany by copying the example.json in the folder ontologies and change the data inside accordingly
   
 # About
 - functions.js: functions for all java scripts
