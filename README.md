@@ -13,11 +13,10 @@ The tool is developed at the [interdisciplinary laboratory "Image Knowledge Gest
  - button to empty all inputfields in user view
  - button to delete whole instances in user view
   
-# TODO
-https://trello.com/b/tLU63Qb8/triplegeany  
 
 # First steps
 To install TripleGeany, follow the following steps:
+
 1. install [xampp](https://www.apachefriends.org/de/index.html)
 2. clone the repo from bitbucket to the htdocs folder of your xampp installation 
 3. install a triplestore (eg. [sesame](http://rdf4j.org/) with tomcat)
